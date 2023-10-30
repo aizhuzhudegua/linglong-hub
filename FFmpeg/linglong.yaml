@@ -1,0 +1,22 @@
+package:
+  id: io.github.FFmpeg
+  name: FFmpeg
+  version: 5.1.0
+  kind: lib
+  description: |
+    FFmpeg is a collection of libraries and tools to process multimedia content such as audio, video, subtitles and related metadata.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/FFmpeg/FFmpeg.git"
+  commit: 2532e832d2773d9d09574434f84decebcf6f81a1
+
+build:
+  kind: autotools
+  manual:
+    configure: |
+      ./configure ${conf_args} ${extra_args}
